@@ -1,8 +1,10 @@
 <?php
-namespace App\Controllers\PagesController;
+namespace App\Controllers;
 use \PDO;
 
-function homeAction(PDO $connection){
+abstract class PagesController{
+
+   public static function homeAction(PDO $connection){
     include_once '../app/models/booksModel.php';
     $books = \App\Models\BooksModel\findAll($connection, 3);
     include_once '../app/models/authorsModel.php';
@@ -14,3 +16,5 @@ function homeAction(PDO $connection){
     include '../app/views/pages/home.php';
     $content = ob_get_clean();
 }
+}
+

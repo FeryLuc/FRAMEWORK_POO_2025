@@ -1,0 +1,15 @@
+{
+  "name": "lucas/framework_poo_2025",
+  "autoload": {
+    "psr-4": {
+      "App\\Controllers\\": "app/controllers/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Luc Fery",
+      "email": "Lucasus822@gmail.com"
+    }
+  ],
+  "require": {}
+}
