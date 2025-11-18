@@ -2,17 +2,16 @@
 
 namespace App\Controllers;
 
-use \PDO;
 use \App\Models\BooksRepository;
 use \App\Models\AuthorsRepository;
 
 abstract class PagesController
 {
 
-    public static function homeAction(PDO $connection)
+    public static function homeAction()
     {
-        $books = BooksRepository::findAll($connection, 3);
-        $authors = AuthorsRepository::findAll($connection, 3);
+        $books = BooksRepository::findAll(3);
+        $authors = AuthorsRepository::findAll(3);
 
         global $content, $title;
 
