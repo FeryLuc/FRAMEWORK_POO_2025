@@ -1,6 +1,5 @@
 <?php
 if (isset($_GET['books'])) {
-    
-}else{
+} else {
     \App\Controllers\PagesController::homeAction($connection);
 }
