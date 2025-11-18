@@ -1,3 +1,16 @@
 <?php
+namespace App\Controllers\PagesController;
+use \PDO;
 
-function homeAction(){}
+function homeAction(PDO $connection){
+    include_once '../app/models/booksModel.php';
+    $books = \App\Models\BooksModel\findAll($connection, 3);
+    include_once '../app/models/authorsModel.php';
+    $authors = \App\Models\AuthorsModel\findAll($connection, 3);
+
+    GLOBAL $content, $title;
+
+    ob_start();
+    include '../app/views/pages/home.php';
+    $content = ob_get_clean();
+}
