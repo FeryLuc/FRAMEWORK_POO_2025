@@ -11,7 +11,7 @@ abstract class DB
 
     public static function getConnection()
     {
-        if (SELF::$connection == null):
+        if (!SELF::$connection):
             SELF::setConnection();
         endif;
 
