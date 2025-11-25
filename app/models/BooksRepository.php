@@ -17,4 +17,15 @@ abstract class BooksRepository
 
         return $rs->fetchAll(PDO::FETCH_CLASS, Book::class);
     }
+
+    public static function findOneById(int $id): Book
+    {
+        $sql = 'SELECT * FROM books WHERE id = :id ORDER BY created_at DESC ';
+        $rs = DB::getConnection()->prepare($sql);
+        $rs->bindValue(':id', $id, PDO::PARAM_INT);
+        $rs->execute();
+        $rs->setFetchMode(PDO::FETCH_CLASS, Book::class);
+
+        return $rs->fetch();
+    }
 }

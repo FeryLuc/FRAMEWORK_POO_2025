@@ -1,5 +1,9 @@
 <ul>
     <?php foreach ($authors as $author): ?>
-        <li><?php echo $author->firstname ?> - <?php echo $author->lastname ?></li>
+        <li>
+            <a href="authors/<?php echo $author->id ?>" class="text-blue-500 hover:underline">
+                <?php echo $author->firstname ?> - <?php echo $author->lastname ?>
+            </a>
+        </li>
     <?php endforeach; ?>
 </ul>
