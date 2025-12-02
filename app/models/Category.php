@@ -2,11 +2,7 @@
 
 namespace App\Models;
 
-class Category
+class Category extends \Core\Model
 {
-    public $id;
     public $name;
-    public $created_at;
-
-    public function __construct() {}
 }
